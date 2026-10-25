@@ -2,18 +2,11 @@
 #define FILE_READER_H
 
 #include <string>
-#include <map>
+#include <vector>
 
 class FileReader {
 public:
-    bool read(const std::string& inputFile);
-
-    const std::map<std::string, int>& getWordFrequency() const;
-    int getTotalWords() const;
-
-private:
-    std::map<std::string, int> wordFrequency;
-    int totalWords = 0;
+    std::vector<std::string> readWords(const std::string& inputFile) const;
 };
 
 #endif

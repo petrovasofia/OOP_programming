@@ -3,13 +3,12 @@
 
 #include <string>
 #include <vector>
-#include <utility>
 
 class CsvWriter {
 public:
     bool write(const std::string& outputFile,
-               const std::vector<std::pair<std::string, int>>& sortedWords,
-               int countOfWords) const;
+               const std::string& header,
+               const std::vector<std::string>& lines) const;
 };
 
 #endif

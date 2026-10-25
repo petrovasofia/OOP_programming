@@ -13,4 +13,5 @@ add_executable(wordcount
         lab0/FileReader.cpp
         lab0/WordSorter.cpp
         lab0/CsvWriter.cpp
+        lab0/WordCounter.cpp
 )

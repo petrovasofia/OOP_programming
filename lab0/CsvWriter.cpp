@@ -3,21 +3,17 @@
 #include <iostream>
 
 bool CsvWriter::write(const std::string& outputFile,
-                      const std::vector<std::pair<std::string, int>>& sortedWords,
-                      int countOfWords) const {
-    std::ofstream CSVFile(outputFile);
-    if (!CSVFile.is_open()) {
+                      const std::string& header,
+                      const std::vector<std::string>& lines) const {
+    std::ofstream csvFile(outputFile);
+    if (!csvFile.is_open()) {
         std::cerr << "Error: cannot open output file \"" << outputFile << "\"" << std::endl;
         return false;
     }
 
-    CSVFile << "Word,Frequency,Frequency (%)" << std::endl;
-    for (const auto& pair : sortedWords) {
-        double percent = countOfWords > 0
-                         ? 100.0 * pair.second / countOfWords
-                         : 0.0;
-        CSVFile << pair.first << "," << pair.second << "," << percent << std::endl;
+    csvFile << header << std::endl;
+    for (const auto& line : lines) {
+        csvFile << line << std::endl;
     }
-    CSVFile.close();
     return true;
 }

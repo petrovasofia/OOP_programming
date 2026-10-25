@@ -3,16 +3,11 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 class WordSorter {
 public:
-    void sort(const std::map<std::string, int>& wordFrequency);
-
-    const std::vector<std::pair<std::string, int>>& getSortedWords() const;
-
-private:
-    std::vector<std::pair<std::string, int>> sortedWords;
+    std::vector<std::pair<std::string, int>> sort(const std::unordered_map<std::string, int>& frequency) const;
 };
 
 #endif
