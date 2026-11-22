@@ -1,4 +1,3 @@
-// trie.cpp
 #include "trie.h"
 
 #include <map>
@@ -14,8 +13,6 @@ struct Trie::Node {
     Node(const Node&) = delete;
     Node& operator=(const Node&) = delete;
 };
-
-namespace {
 
 void destroy_node(Trie::Node* node) {
     if (!node) return;
@@ -61,8 +58,6 @@ void collect_words(const Trie::Node* node, std::string& buffer,
         if (limit != 0 && out.size() >= limit) return;
     }
 }
-
-}  // namespace
 
 Trie::Trie() : root_(new Node()), size_(0) {}
 

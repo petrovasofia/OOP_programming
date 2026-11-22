@@ -40,6 +40,12 @@ private:
     size_type size_;
 
     Node* find_node(std::string_view s) const;
+
+    friend void destroy_node(Node* node);
+    friend Node* clone_node(const Node* node);
+    friend bool nodes_equal(const Node* a, const Node* b);
+    friend void collect_words(const Node* node, std::string& buffer,
+                              std::vector<std::string>& words, size_type max_count);
 };
 
 #endif
